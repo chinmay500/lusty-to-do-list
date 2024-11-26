@@ -87,7 +87,7 @@ export default function TodoList() {
     <div className="relative min-h-screen">
       <div className="fixed inset-0 -z-10">
         {/* <Image
-          src="/placeholder.svg?height=1080&width=1920"
+          src="/placeholder.svg"
           alt="Background"
           layout="fill"
           objectFit="cover"
