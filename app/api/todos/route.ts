@@ -33,7 +33,7 @@ export async function POST(request: Request) {
 
     const todo = await prisma.todo.create({
       data: {
-        text: text.trim(),
+        title: text.trim(),
         completed: false
       }
     })
