@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils"
 
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
-  // Adding a specific prop to avoid empty interface error
+  // Add a custom prop to avoid the empty interface error
   wrapperClassName?: string
 }
 
