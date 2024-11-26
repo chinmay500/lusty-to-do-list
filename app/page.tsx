@@ -77,24 +77,24 @@ export default function TodoList() {
   }
 
   const playSound = (action: 'create' | 'edit' | 'delete') => {
-    const audio = new Audio(`/sounds/${action}.mp3`)
-    audio.play().catch(error => console.error('Error playing sound:', error))
+    if (typeof window !== 'undefined') {
+      const audio = new Audio(`/sounds/${action}.mp3`)
+      audio.play().catch(error => console.error('Error playing sound:', error))
+    }
   }
 
   return (
     <div className="relative min-h-screen">
-      {/* Background Image */}
-      <div className="fixed inset-0 -z-10 bg-slate-200">
+      <div className="fixed inset-0 -z-10">
         {/* <Image
-          src="/bg.jpg"
+          src="/placeholder.svg?height=1080&width=1920"
           alt="Background"
-          fill
-          className="object-cover"
+          layout="fill"
+          objectFit="cover"
           priority
         /> */}
       </div>
       
-      {/* Content */}
       <div className="relative z-10 flex min-h-screen items-center justify-center p-4">
         <div className="w-full max-w-md rounded-xl bg-white/90 p-6 backdrop-blur-sm shadow-2xl">
           <h1 className="mb-6 text-3xl font-bold text-center text-gray-800">Todo List</h1>
