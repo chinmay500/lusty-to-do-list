@@ -24,7 +24,7 @@ export async function PUT(
     if (completed !== undefined) updateData.completed = completed
 
     const todo = await prisma.todo.update({
-      where: { id },
+      where: { id: id.toString() },
       data: updateData,
     })
 
@@ -52,7 +52,7 @@ export async function DELETE(
     }
 
     await prisma.todo.delete({
-      where: { id },
+      where: { id: id.toString() },
     })
 
     return NextResponse.json({ success: true })
